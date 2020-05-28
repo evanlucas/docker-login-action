@@ -1,0 +1,21 @@
+name: Docker login
+description: Logs in to docker registry
+author: Evan Lucas
+branding:
+  icon: 'anchor'
+  color: 'blue'
+runs:
+  using: docker
+  image: docker://docker/github-actions:v1
+  args:
+    - login
+inputs:
+  username:
+    description: Username used to log in to a Docker registry. If not set then no login will occur
+    required: false
+  password:
+    description: Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+    required: false
+  registry:
+    description: Server address of Docker registry. If not set then will default to Docker Hub
+    required: false
